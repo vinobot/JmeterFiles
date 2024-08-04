@@ -1,0 +1,1042 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan">
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="host" elementType="Argument">
+            <stringProp name="Argument.name">host</stringProp>
+            <stringProp name="Argument.value">www.example.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="scheme" elementType="Argument">
+            <stringProp name="Argument.name">scheme</stringProp>
+            <stringProp name="Argument.value">https</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <stringProp name="HTTPSampler.domain">www.example.com</stringProp>
+        <stringProp name="HTTPSampler.protocol">https</stringProp>
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.implementation"></stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+        <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <RecordingController guiclass="RecordController" testclass="RecordingController" testname="Recording Controller"/>
+        <hashTree>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="petstore_homepage01">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+          </TransactionController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="petstore_homepage01-166">
+              <stringProp name="HTTPSampler.domain">petstore.octoperf.com</stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+              <stringProp name="HTTPSampler.path">/</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                    <stringProp name="Header.value">navigate</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Site" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                    <stringProp name="Header.value">none</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-GB,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-User" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                    <stringProp name="Header.value">?1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot;Not/A)Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;126&quot;, &quot;Google Chrome&quot;;v=&quot;126&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                    <stringProp name="Header.value">?0</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-platform" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                    <stringProp name="Header.value">&quot;macOS&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                    <stringProp name="Header.value">1</stringProp>
+                  </elementProp>
+                  <elementProp name="Cache-Control" elementType="Header">
+                    <stringProp name="Header.name">Cache-Control</stringProp>
+                    <stringProp name="Header.value">max-age=0</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate, br, zstd</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                    <stringProp name="Header.value">document</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="petstore_enterstore02">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+          </TransactionController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="petstore_enterstore02-168">
+              <stringProp name="HTTPSampler.domain">petstore.octoperf.com</stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+              <stringProp name="HTTPSampler.path">/actions/Catalog.action</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                    <stringProp name="Header.value">navigate</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">${scheme}://petstore.octoperf.com/</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Site" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                    <stringProp name="Header.value">same-origin</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-GB,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-User" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                    <stringProp name="Header.value">?1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot;Not/A)Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;126&quot;, &quot;Google Chrome&quot;;v=&quot;126&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                    <stringProp name="Header.value">?0</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-platform" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                    <stringProp name="Header.value">&quot;macOS&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                    <stringProp name="Header.value">1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate, br, zstd</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                    <stringProp name="Header.value">document</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="petstore_clicksigin03">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+          </TransactionController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="petstore_clicksigin03-183">
+              <stringProp name="HTTPSampler.domain">petstore.octoperf.com</stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+              <stringProp name="HTTPSampler.path">/actions/Account.action;jsessionid=A37723076000643D6C24BA9F6AE2DF0D</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="signonForm" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">signonForm</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                    <stringProp name="Header.value">navigate</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">${scheme}://petstore.octoperf.com/actions/Catalog.action</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Site" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                    <stringProp name="Header.value">same-origin</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-GB,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-User" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                    <stringProp name="Header.value">?1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot;Not/A)Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;126&quot;, &quot;Google Chrome&quot;;v=&quot;126&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                    <stringProp name="Header.value">?0</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-platform" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                    <stringProp name="Header.value">&quot;macOS&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                    <stringProp name="Header.value">1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate, br, zstd</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                    <stringProp name="Header.value">document</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="petstore_clicksigin03-186">
+              <stringProp name="HTTPSampler.domain">api.obsec.io</stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+              <stringProp name="HTTPSampler.path">/v2/extension-telemetry</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;eventType&quot;:&quot;analytics.ping&quot;,&quot;context&quot;:{&quot;browser&quot;:&quot;chrome&quot;,&quot;config&quot;:{&quot;global&quot;:{&quot;etag&quot;:&quot;W/\&quot;efe97c51864daa9a91e8f76786e85bad\&quot;&quot;},&quot;org&quot;:{&quot;etag&quot;:&quot;W/\&quot;bef831eb2130d436ce04a94abf4ed967\&quot;&quot;}},&quot;deployment&quot;:{},&quot;extension_id&quot;:&quot;lhjgbnkciekganmfcnlofjnobhffapjg&quot;,&quot;extension_version&quot;:&quot;0.31.1&quot;,&quot;install_type&quot;:&quot;admin&quot;,&quot;language&quot;:&quot;en-GB&quot;,&quot;org&quot;:{&quot;orgToken&quot;:&quot;chrome_admin-38d7e7bc-a368-4de2-9b64-aad9a74ee372&quot;},&quot;platform_info&quot;:{&quot;arch&quot;:&quot;x86-64&quot;,&quot;nacl_arch&quot;:&quot;x86-64&quot;,&quot;os&quot;:&quot;mac&quot;},&quot;profile_uuid&quot;:&quot;76d638ef-effa-479e-9a5b-22ea07eb000f&quot;,&quot;proxy_config&quot;:{&quot;type&quot;:&quot;system&quot;},&quot;settings_src&quot;:&quot;managed&quot;,&quot;user&quot;:{&quot;identity&quot;:{&quot;email&quot;:&quot;vinoth.sureshnambu@freshworks.com&quot;,&quot;id&quot;:&quot;107222942822278022346&quot;},&quot;identities&quot;:[{&quot;email&quot;:&quot;vinoth.sureshnambu@freshworks.com&quot;,&quot;id&quot;:&quot;107222942822278022346&quot;}],&quot;emails&quot;:[&quot;vinoth.sureshnambu@freshworks.com&quot;,&quot;vsureshnambu@freshworks.com&quot;],&quot;uuid&quot;:&quot;63766e82-92f1-4dff-943e-76e1c31e4b82&quot;},&quot;user_agent&quot;:&quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36&quot;,&quot;user_agent_data&quot;:{&quot;brands&quot;:[{&quot;brand&quot;:&quot;Not/A)Brand&quot;,&quot;version&quot;:&quot;8.0.0.0&quot;},{&quot;brand&quot;:&quot;Chromium&quot;,&quot;version&quot;:&quot;126.0.6478.183&quot;},{&quot;brand&quot;:&quot;Google Chrome&quot;,&quot;version&quot;:&quot;126.0.6478.183&quot;}],&quot;mobile&quot;:false,&quot;platform&quot;:&quot;macOS&quot;,&quot;platformVersion&quot;:&quot;14.3.1&quot;}},&quot;events&quot;:[{&quot;type&quot;:&quot;analytics.ping&quot;,&quot;category&quot;:&quot;analytics.ping&quot;,&quot;timestamp&quot;:1721455788,&quot;uuid&quot;:&quot;7666fe95-1778-4eb9-a3cf-9699f82795dd&quot;}]}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                    <stringProp name="Header.value">cors</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Site" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                    <stringProp name="Header.value">none</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">chrome-extension://lhjgbnkciekganmfcnlofjnobhffapjg</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">*/*</stringProp>
+                  </elementProp>
+                  <elementProp name="X-Telemetry-Hash" elementType="Header">
+                    <stringProp name="Header.name">X-Telemetry-Hash</stringProp>
+                    <stringProp name="Header.value">adc22ee46f24fd5a05405fa66c506ef97a8e66473ec3ce6c601e0f2aac9ac35e</stringProp>
+                  </elementProp>
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json; charset=utf-8</stringProp>
+                  </elementProp>
+                  <elementProp name="X-Telemetry-Sig" elementType="Header">
+                    <stringProp name="Header.name">X-Telemetry-Sig</stringProp>
+                    <stringProp name="Header.value">c6764ee1ce9e3ad4775fd4a28d4c3d4af43aa919b38ece76084d883be5fca028</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate, br, zstd</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                    <stringProp name="Header.value">empty</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="petstore_clicksigin03">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+          </TransactionController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="petstore_clicksigin03-188">
+              <stringProp name="TestPlan.comments">Detected the start of a redirect chain</stringProp>
+              <stringProp name="HTTPSampler.domain">petstore.octoperf.com</stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+              <stringProp name="HTTPSampler.path">/actions/Account.action</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="username" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">username</stringProp>
+                    <stringProp name="Argument.value">j2ee</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="password" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">password</stringProp>
+                    <stringProp name="Argument.value">j2ee</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="signon" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">signon</stringProp>
+                    <stringProp name="Argument.value">Login</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="_sourcePage" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <stringProp name="Argument.name">_sourcePage</stringProp>
+                    <stringProp name="Argument.value">hsv2nvmez-Xb1bLWFb9pQ8G7cV_UdKYe10NStKEk1NbdlmWe9z2dEdT6Vt9oXiM2VBYPV9XKAl_hgprA3s6kVFJrUMdJ-hB-gALk-HUStWA=</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="__fp" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">__fp</stringProp>
+                    <stringProp name="Argument.value">9kxdtXaxVeLzuOZUAczMQsXgyMSfUBI6rC8zQQHpaFx7zHtI4dTtmlG_u8CVoQlE</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                    <stringProp name="Header.value">navigate</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">${scheme}://petstore.octoperf.com/actions/Account.action;jsessionid=A37723076000643D6C24BA9F6AE2DF0D?signonForm=</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Site" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                    <stringProp name="Header.value">same-origin</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-GB,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">${scheme}://petstore.octoperf.com</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-User" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                    <stringProp name="Header.value">?1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot;Not/A)Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;126&quot;, &quot;Google Chrome&quot;;v=&quot;126&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                    <stringProp name="Header.value">?0</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-platform" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                    <stringProp name="Header.value">&quot;macOS&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                    <stringProp name="Header.value">1</stringProp>
+                  </elementProp>
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+                  </elementProp>
+                  <elementProp name="Cache-Control" elementType="Header">
+                    <stringProp name="Header.name">Cache-Control</stringProp>
+                    <stringProp name="Header.value">max-age=0</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate, br, zstd</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                    <stringProp name="Header.value">document</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="petstore_clicksigin03-189">
+              <stringProp name="HTTPSampler.domain">petstore.octoperf.com</stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+              <stringProp name="HTTPSampler.path">/actions/Catalog.action</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                    <stringProp name="Header.value">navigate</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">${scheme}://petstore.octoperf.com/actions/Account.action;jsessionid=A37723076000643D6C24BA9F6AE2DF0D?signonForm=</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Site" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                    <stringProp name="Header.value">same-origin</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-GB,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-User" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                    <stringProp name="Header.value">?1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot;Not/A)Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;126&quot;, &quot;Google Chrome&quot;;v=&quot;126&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                    <stringProp name="Header.value">?0</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-platform" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                    <stringProp name="Header.value">&quot;macOS&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                    <stringProp name="Header.value">1</stringProp>
+                  </elementProp>
+                  <elementProp name="Cache-Control" elementType="Header">
+                    <stringProp name="Header.name">Cache-Control</stringProp>
+                    <stringProp name="Header.value">max-age=0</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate, br, zstd</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                    <stringProp name="Header.value">document</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="petstore_clickfish04" enabled="true">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+          </TransactionController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="petstore_clickfish04-191">
+              <stringProp name="HTTPSampler.domain">metrics-r.wbx2.com</stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+              <stringProp name="HTTPSampler.path">/metrics/api/v1/clientmetrics</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;metrics&quot;:[{&quot;type&quot;:[&quot;business&quot;],&quot;eventPayload&quot;:{&quot;appType&quot;:&quot;Native Desktop&quot;,&quot;app_architecture&quot;:&quot;64&quot;,&quot;batch&quot;:{&quot;id&quot;:&quot;76403d95-6459-4a23-9b8a-48d626a2cdbd&quot;,&quot;n&quot;:2},&quot;client_timestamp&quot;:&quot;2024-07-20T06:09:52.897Z&quot;,&quot;cpu_architecture&quot;:&quot;intel&quot;,&quot;experiments&quot;:{&quot;desktop-broadworks-media-start-on-call-create&quot;:false,&quot;desktop-resolution-based-on-physical-pixel-enabled&quot;:true,&quot;mac-feature-discoverability-enabled&quot;:true,&quot;qml-feature-discoverability-enabled&quot;:true,&quot;ucf-client-AaTestUserLevel&quot;:false,&quot;ucf-client-EnableAudioUnderrunPLC&quot;:false,&quot;ucf-client-Mobile-EnablePlaybackNewAgc-ga&quot;:false,&quot;win32-websocket-enabled-ga-v4&quot;:true},&quot;extra_payload&quot;:{&quot;product_mode&quot;:&quot;meet &quot;},&quot;guestUser&quot;:true,&quot;installationId&quot;:&quot;1ccc2b21-d851-4510-81f2-fc3c9ea5922a&quot;,&quot;key&quot;:&quot;MeetingReaction&quot;,&quot;logical_processors&quot;:12,&quot;os_version&quot;:&quot;14.3.1&quot;,&quot;platform_architecture&quot;:&quot;64&quot;,&quot;platform_info&quot;:&quot;MacBookPro16,1&quot;,&quot;product_name&quot;:&quot;Spark native for Mac&quot;,&quot;product_version&quot;:&quot;44.7.0.30141&quot;,&quot;restricted_network&quot;:false,&quot;rosetta_mode&quot;:&quot;0&quot;,&quot;sessionId&quot;:&quot;1ccc2b21-d851-4510-81f2-fc3c9ea5922a-1721454074563&quot;,&quot;startup_mode&quot;:&quot;&quot;,&quot;users_channel&quot;:&quot;&quot;,&quot;uuid&quot;:&quot;d6a3038a-3e4a-6f78-99c8-6b59021a56a4&quot;,&quot;value&quot;:{&quot;correlationId&quot;:&quot;dcc82fa0-1785-4c82-9829-9f6a4ecab1c5&quot;,&quot;current_host_cpu_percent&quot;:0,&quot;eventType&quot;:&quot;meeting_reaction_socket_connection_failure&quot;,&quot;http2_enabled&quot;:0,&quot;http_stack_name&quot;:&quot;Casablanca&quot;,&quot;initial_sync&quot;:false,&quot;lifecycle_state&quot;:&quot;logged_in&quot;,&quot;locusId&quot;:&quot;df1ee2fc-cd56-3b41-9f70-3716c7c32ed6&quot;,&quot;maxJoinedRosterSize&quot;:29,&quot;maxRosterSize&quot;:32,&quot;numberOfNullParticipantId&quot;:0,&quot;numberOfSentFailure&quot;:0,&quot;reactionUsed&quot;:false,&quot;sessionId&quot;:&quot;c5ebc3a6-50a6-40cc-2a33-3719e0be48b7&quot;},&quot;vm_type&quot;:&quot;none&quot;}},{&quot;eventPayload&quot;:{&quot;event&quot;:{&quot;callingServiceType&quot;:&quot;LOCUS&quot;,&quot;canProceed&quot;:true,&quot;identifiers&quot;:{&quot;correlationId&quot;:&quot;dcc82fa0-1785-4c82-9829-9f6a4ecab1c5&quot;,&quot;deviceId&quot;:&quot;${scheme}://wdm-r.wbx2.com/wdm/api/v1/devices/43491e6d-be91-4951-a9ce-80d42d5edf2a&quot;,&quot;globalMeetingId&quot;:&quot;a15bf45c2c5e48f28bd6d6d163c62531&quot;,&quot;locusId&quot;:&quot;df1ee2fc-cd56-3b41-9f70-3716c7c32ed6&quot;,&quot;locusSessionId&quot;:&quot;c5ebc3a6-50a6-40cc-2a33-3719e0be48b7&quot;,&quot;locusStartTime&quot;:&quot;2024-07-20T04:13:38.608Z&quot;,&quot;locusUrl&quot;:&quot;${scheme}://locus-t.wbx2.com/locus/api/v1/loci/df1ee2fc-cd56-3b41-9f70-3716c7c32ed6&quot;,&quot;machineId&quot;:&quot;fba407fed7360b8460b42ef3b636af38dd377e6077fbbde551a3b9a67824560b&quot;,&quot;mediaAgentAlias&quot;:&quot;external-media114-wsinm-a-1-prod-infra-webex-com&quot;,&quot;mediaAgentGroupId&quot;:&quot;wsinm.wsinm&quot;,&quot;meetingLookupUrl&quot;:&quot;${scheme}://testleaf.my.webex.com/wbxappapi/v1/preJoin&quot;,&quot;oauth2ClientId&quot;:&quot;Ccb2581f071a0714c8ab7d4777f70ebed26f1ef5f3261597f00afbb3a53c1ad88&quot;,&quot;orgId&quot;:&quot;b312a319-34d3-46c2-909c-db752b6faf9b&quot;,&quot;trackingId&quot;:&quot;OSX_c68a4701-0e0f-4bc8-a056-ba96f9d42d88_2&quot;,&quot;userId&quot;:&quot;c3ace26f-465b-11ef-8706-99bf616f7265&quot;,&quot;webexConferenceIdStr&quot;:&quot;597811425160159060&quot;,&quot;webexSiteName&quot;:&quot;testleaf.my&quot;},&quot;intervals&quot;:[{&quot;audioReceive&quot;:[{&quot;common&quot;:{&quot;common&quot;:{&quot;direction&quot;:&quot;sendrecv&quot;,&quot;isMain&quot;:true,&quot;mariFecEnabled&quot;:true,&quot;mariQosEnabled&quot;:true,&quot;mariRtxEnabled&quot;:true,&quot;multistreamEnabled&quot;:true},&quot;dtlsBitrate&quot;:0,&quot;dtlsPackets&quot;:0,&quot;fecBitrate&quot;:0,&quot;fecPackets&quot;:0,&quot;ignoredNACKRatio&quot;:0,&quot;maxBitrate&quot;:1000000,&quot;maxRtxDelay&quot;:0,&quot;meanRtxDelay&quot;:0,&quot;mediaHopByHopLost&quot;:0,&quot;rtcpBitrate&quot;:35736,&quot;rtcpPackets&quot;:498,&quot;rtpBitrate&quot;:53078,&quot;rtpHopByHopLost&quot;:0,&quot;rtpPackets&quot;:3164,&quot;rtpRecovered&quot;:0,&quot;rtxBitrate&quot;:0,&quot;rtxPackets&quot;:0,&quot;rtxRecovered&quot;:0,&quot;srtcpUnprotectErrors&quot;:0,&quot;srtpUnprotectErrors&quot;:0,&quot;stunBitrate&quot;:3840,&quot;stunPackets&quot;:60,&quot;transportType&quot;:&quot;UDP&quot;},&quot;levels&quot;:{&quot;audioMaxGain&quot;:77,&quot;audioMaxVolume&quot;:53314,&quot;audioMeanGain&quot;:49,&quot;audioMeanVolume&quot;:53314,&quot;audioMinGain&quot;:15,&quot;audioMinVolume&quot;:53314},&quot;playbackHardwareRequiredAudioPacketsPerSecond&quot;:93,&quot;streams&quot;:[{&quot;audioAlgorithmModulesInfo&quot;:{&quot;averageRxModuleCostTime&quot;:0,&quot;averageSEProcessTime&quot;:0,&quot;beepLength&quot;:0,&quot;bnrLength&quot;:0,&quot;bnrTRN&quot;:0,&quot;bweLength&quot;:0,&quot;mohLength&quot;:0,&quot;speechLength&quot;:117,&quot;speechQuality&quot;:95,&quot;speechRMS&quot;:50,&quot;speechRMSRaw&quot;:255,&quot;wmosDispersion&quot;:0,&quot;wmosMedian&quot;:0},&quot;audioModuleQualityInfo&quot;:{&quot;xcodecDecoded1kFrames&quot;:0,&quot;xcodecDecoded6kFrames&quot;:0,&quot;xcodecDecodedPLCFrames&quot;:0,&quot;xcodecTotalDecodedFrames&quot;:0},&quot;avSync&quot;:{&quot;decidePlayedUnsyncRatio&quot;:0,&quot;maxVideoEarlyInterval&quot;:0,&quot;maxVideoLateInterval&quot;:0},&quot;averageSNRValue&quot;:0,&quot;common&quot;:{&quot;activeSpeech&quot;:2020,&quot;activeSpeechConcealment&quot;:0,&quot;captureInterval&quot;:1,&quot;codec&quot;:&quot;opus&quot;,&quot;concealedFrames&quot;:0,&quot;concealmentReasonByFrame&quot;:{&quot;byLate&quot;:0,&quot;byNetwork&quot;:0,&quot;byOthers&quot;:0,&quot;byOverflow&quot;:0,&quot;byReset&quot;:0},&quot;csi&quot;:[4201266176,925366528,3377249792,2771759104],&quot;durationForSpeedChanged&quot;:0,&quot;endToEndDelay&quot;:{&quot;maxDelay&quot;:220,&quot;meanDelay&quot;:165,&quot;minDelay&quot;:131},&quot;endToEndDelayByRtcp&quot;:90,&quot;endToEndDelayComponents&quot;:{&quot;receiverTransmitDelay&quot;:19,&quot;receiverTraversalDelay&quot;:34,&quot;senderTransmitDelay&quot;:31,&quot;senderTraversalDelay&quot;:0,&quot;totalServerTransmitDelay&quot;:0,&quot;totalServerTraversalDelay&quot;:6},&quot;endToEndTransmitDelay&quot;:137,&quot;interruptCount&quot;:{&quot;longerThan120&quot;:0,&quot;longerThan60&quot;:0},&quot;jitterBufferDelay&quot;:{&quot;maxDelay&quot;:90,&quot;meanDelay&quot;:34,&quot;minDelay&quot;:0},&quot;linkNodeList&quot;:[{&quot;regionInfo&quot;:&quot;IN&quot;,&quot;transmitDelay&quot;:0,&quot;traversalDelay&quot;:0},{&quot;nodeType&quot;:&quot;HOMER_CLOUD&quot;,&quot;regionInfo&quot;:&quot;wsinm&quot;,&quot;transmitDelay&quot;:31,&quot;traversalDelay&quot;:6},{&quot;nodeType&quot;:&quot;WME_CLIENT_MAC&quot;,&quot;regionInfo&quot;:&quot;US&quot;,&quot;transmitDelay&quot;:19,&quot;traversalDelay&quot;:34}],&quot;maxConcealRunLength&quot;:0,&quot;maxConsecutiveActiveSpeechConcealment&quot;:0,&quot;maxRtpJitter&quot;:8,&quot;meanRtpJitter&quot;:3,&quot;optimalBitrate&quot;:64000,&quot;optimalFrameRate&quot;:0,&quot;receivedBitrate&quot;:7421,&quot;receivedFrameRate&quot;:100,&quot;renderedFrameRate&quot;:100,&quot;requestedBitrate&quot;:64000,&quot;requestedFrameRate&quot;:100,&quot;rtpEndToEndLost&quot;:0,&quot;rtpJitter&quot;:8,&quot;rtpMaxEndToEndLoss&quot;:0,&quot;rtpMinEndToEndLoss&quot;:0,&quot;rtpPackets&quot;:746,&quot;serverCrossDataCenterCnt&quot;:0,&quot;sourceChanges&quot;:{&quot;csrcChanges&quot;:5,&quot;ssrcChanges&quot;:5},&quot;ssci&quot;:0,&quot;totalHops&quot;:3},&quot;isMeasureSNROn&quot;:false,&quot;isRxCallBackgroundNoiseReductionModeOn&quot;:false},{&quot;audioAlgorithmModulesInfo&quot;:{&quot;averageRxModuleCostTime&quot;:0,&quot;averageSEProcessTime&quot;:0,&quot;beepLength&quot;:0,&quot;bnrLength&quot;:0,&quot;bnrTRN&quot;:0,&quot;bweLength&quot;:0,&quot;mohLength&quot;:0,&quot;speechLength&quot;:119,&quot;speechQuality&quot;:95,&quot;speechRMS&quot;:51,&quot;speechRMSRaw&quot;:255,&quot;wmosDispersion&quot;:0,&quot;wmosMedian&quot;:0},&quot;audioModuleQualityInfo&quot;:{&quot;xcodecDecoded1kFrames&quot;:0,&quot;xcodecDecoded6kFrames&quot;:0,&quot;xcodecDecodedPLCFrames&quot;:0,&quot;xcodecTotalDecodedFrames&quot;:0},&quot;avSync&quot;:{&quot;decidePlayedUnsyncRatio&quot;:0,&quot;maxVideoEarlyInterval&quot;:0,&quot;maxVideoLateInterval&quot;:0},&quot;averageSNRValue&quot;:0,&quot;common&quot;:{&quot;activeSpeech&quot;:2920,&quot;activeSpeechConcealment&quot;:0,&quot;captureInterval&quot;:1,&quot;codec&quot;:&quot;opus&quot;,&quot;concealedFrames&quot;:0,&quot;concealmentReasonByFrame&quot;:{&quot;byLate&quot;:0,&quot;byNetwork&quot;:0,&quot;byOthers&quot;:0,&quot;byOverflow&quot;:0,&quot;byReset&quot;:0},&quot;csi&quot;:[3377249792,3369637888,1983655424,1732544000,944336896,1051122176,4201266176],&quot;durationForSpeedChanged&quot;:0,&quot;endToEndDelay&quot;:{&quot;maxDelay&quot;:221,&quot;meanDelay&quot;:192,&quot;minDelay&quot;:148},&quot;endToEndDelayByRtcp&quot;:217,&quot;endToEndDelayComponents&quot;:{&quot;receiverTransmitDelay&quot;:18,&quot;receiverTraversalDelay&quot;:57,&quot;senderTransmitDelay&quot;:20,&quot;senderTraversalDelay&quot;:0,&quot;totalServerTransmitDelay&quot;:86,&quot;totalServerTraversalDelay&quot;:36},&quot;endToEndTransmitDelay&quot;:142,&quot;interruptCount&quot;:{&quot;longerThan120&quot;:0,&quot;longerThan60&quot;:0},&quot;jitterBufferDelay&quot;:{&quot;maxDelay&quot;:130,&quot;meanDelay&quot;:55,&quot;minDelay&quot;:10},&quot;linkNodeList&quot;:[{&quot;regionInfo&quot;:&quot;IN&quot;,&quot;transmitDelay&quot;:0,&quot;traversalDelay&quot;:0},{&quot;nodeType&quot;:&quot;HOMER_CLOUD&quot;,&quot;regionInfo&quot;:&quot;wbomm&quot;,&quot;transmitDelay&quot;:20,&quot;traversalDelay&quot;:5},{&quot;nodeType&quot;:&quot;HOMER_CLOUD&quot;,&quot;regionInfo&quot;:&quot;wnrtm&quot;,&quot;transmitDelay&quot;:49,&quot;traversalDelay&quot;:25},{&quot;nodeType&quot;:&quot;HOMER_CLOUD&quot;,&quot;regionInfo&quot;:&quot;wsinm&quot;,&quot;transmitDelay&quot;:37,&quot;traversalDelay&quot;:6},{&quot;nodeType&quot;:&quot;WME_CLIENT_MAC&quot;,&quot;regionInfo&quot;:&quot;US&quot;,&quot;transmitDelay&quot;:18,&quot;traversalDelay&quot;:57}],&quot;maxConcealRunLength&quot;:0,&quot;maxConsecutiveActiveSpeechConcealment&quot;:0,&quot;maxRtpJitter&quot;:39,&quot;meanRtpJitter&quot;:3,&quot;optimalBitrate&quot;:64000,&quot;optimalFrameRate&quot;:0,&quot;receivedBitrate&quot;:20891,&quot;receivedFrameRate&quot;:100,&quot;renderedFrameRate&quot;:100,&quot;requestedBitrate&quot;:64000,&quot;requestedFrameRate&quot;:100,&quot;rtpEndToEndLost&quot;:0,&quot;rtpJitter&quot;:39,&quot;rtpMaxEndToEndLoss&quot;:0,&quot;rtpMinEndToEndLoss&quot;:0,&quot;rtpPackets&quot;:1129,&quot;serverCrossDataCenterCnt&quot;:2,&quot;sourceChanges&quot;:{&quot;csrcChanges&quot;:18,&quot;ssrcChanges&quot;:19},&quot;ssci&quot;:1,&quot;totalHops&quot;:5},&quot;isMeasureSNROn&quot;:false,&quot;isRxCallBackgroundNoiseReductionModeOn&quot;:false},{&quot;audioAlgorithmModulesInfo&quot;:{&quot;averageRxModuleCostTime&quot;:0,&quot;averageSEProcessTime&quot;:0,&quot;beepLength&quot;:0,&quot;bnrLength&quot;:0,&quot;bnrTRN&quot;:0,&quot;bweLength&quot;:0,&quot;mohLength&quot;:0,&quot;speechLength&quot;:121,&quot;speechQuality&quot;:95,&quot;speechRMS&quot;:51,&quot;speechRMSRaw&quot;:255,&quot;wmosDispersion&quot;:0,&quot;wmosMedian&quot;:0},&quot;audioModuleQualityInfo&quot;:{&quot;xcodecDecoded1kFrames&quot;:0,&quot;xcodecDecoded6kFrames&quot;:0,&quot;xcodecDecodedPLCFrames&quot;:0,&quot;xcodecTotalDecodedFrames&quot;:0},&quot;avSync&quot;:{&quot;decidePlayedUnsyncRatio&quot;:0,&quot;maxVideoEarlyInterval&quot;:0,&quot;maxVideoLateInterval&quot;:0},&quot;averageSNRValue&quot;:0,&quot;common&quot;:{&quot;activeSpeech&quot;:25630,&quot;activeSpeechConcealment&quot;:30,&quot;captureInterval&quot;:1,&quot;codec&quot;:&quot;opus&quot;,&quot;concealedFrames&quot;:0,&quot;concealmentReasonByFrame&quot;:{&quot;byLate&quot;:0,&quot;byNetwork&quot;:0,&quot;byOthers&quot;:0,&quot;byOverflow&quot;:0,&quot;byReset&quot;:0},&quot;csi&quot;:[944336896,3377249792,1983655424,4201266176],&quot;durationForSpeedChanged&quot;:0,&quot;endToEndDelay&quot;:{&quot;maxDelay&quot;:105,&quot;meanDelay&quot;:90,&quot;minDelay&quot;:70},&quot;endToEndDelayByRtcp&quot;:202,&quot;endToEndDelayComponents&quot;:{&quot;receiverTransmitDelay&quot;:19,&quot;receiverTraversalDelay&quot;:35,&quot;senderTransmitDelay&quot;:30,&quot;senderTraversalDelay&quot;:0,&quot;totalServerTransmitDelay&quot;:92,&quot;totalServerTraversalDelay&quot;:26},&quot;endToEndTransmitDelay&quot;:50,&quot;interruptCount&quot;:{&quot;longerThan120&quot;:0,&quot;longerThan60&quot;:0},&quot;jitterBufferDelay&quot;:{&quot;maxDelay&quot;:50,&quot;meanDelay&quot;:35,&quot;minDelay&quot;:10},&quot;linkNodeList&quot;:[{&quot;regionInfo&quot;:&quot;IN&quot;,&quot;transmitDelay&quot;:0,&quot;traversalDelay&quot;:0},{&quot;nodeType&quot;:&quot;HOMER_CLOUD&quot;,&quot;regionInfo&quot;:&quot;wbomm&quot;,&quot;transmitDelay&quot;:30,&quot;traversalDelay&quot;:5},{&quot;nodeType&quot;:&quot;HOMER_CLOUD&quot;,&quot;regionInfo&quot;:&quot;wnrtm&quot;,&quot;transmitDelay&quot;:55,&quot;traversalDelay&quot;:15},{&quot;nodeType&quot;:&quot;HOMER_CLOUD&quot;,&quot;regionInfo&quot;:&quot;wsinm&quot;,&quot;transmitDelay&quot;:37,&quot;traversalDelay&quot;:6},{&quot;nodeType&quot;:&quot;WME_CLIENT_MAC&quot;,&quot;regionInfo&quot;:&quot;US&quot;,&quot;transmitDelay&quot;:19,&quot;traversalDelay&quot;:35}],&quot;maxConcealRunLength&quot;:0,&quot;maxConsecutiveActiveSpeechConcealment&quot;:30,&quot;maxRtpJitter&quot;:10,&quot;meanRtpJitter&quot;:2,&quot;optimalBitrate&quot;:64000,&quot;optimalFrameRate&quot;:0,&quot;receivedBitrate&quot;:25229,&quot;receivedFrameRate&quot;:100,&quot;renderedFrameRate&quot;:100,&quot;requestedBitrate&quot;:64000,&quot;requestedFrameRate&quot;:100,&quot;rtpEndToEndLost&quot;:0,&quot;rtpJitter&quot;:10,&quot;rtpMaxEndToEndLoss&quot;:0,&quot;rtpMinEndToEndLoss&quot;:0,&quot;rtpPackets&quot;:1289,&quot;serverCrossDataCenterCnt&quot;:2,&quot;sourceChanges&quot;:{&quot;csrcChanges&quot;:10,&quot;ssrcChanges&quot;:12},&quot;ssci&quot;:2,&quot;totalHops&quot;:5},&quot;isMeasureSNROn&quot;:false,&quot;isRxCallBackgroundNoiseReductionModeOn&quot;:false}]}],&quot;audioTransmit&quot;:[{&quot;common&quot;:{&quot;availableBitrate&quot;:79200,&quot;captureFormat&quot;:0,&quot;common&quot;:{&quot;direction&quot;:&quot;sendrecv&quot;,&quot;isMain&quot;:true,&quot;mariFecEnabled&quot;:true,&quot;mariQosEnabled&quot;:true,&quot;mariRtxEnabled&quot;:true,&quot;multistreamEnabled&quot;:true},&quot;dscpvalue&quot;:46,&quot;dtlsBitrate&quot;:0,&quot;dtlsPackets&quot;:0,&quot;fecBitrate&quot;:0,&quot;fecPackets&quot;:0,&quot;ignoredNACKRatio&quot;:0,&quot;maxBitrate&quot;:600000,&quot;maxRemoteJitter&quot;:22,&quot;maxRemoteLossRate&quot;:0,&quot;maxRoundTripTime&quot;:50,&quot;meanRemoteJitter&quot;:10,&quot;meanRemoteLossRate&quot;:0,&quot;meanRoundTripTime&quot;:40,&quot;queueDelay&quot;:22,&quot;remoteJitter&quot;:22,&quot;remoteLossRate&quot;:0,&quot;remoteReceiveRate&quot;:1552,&quot;roundTripTime&quot;:50,&quot;rtcpBitrate&quot;:23268,&quot;rtcpPackets&quot;:289,&quot;rtpBitrate&quot;:1708,&quot;rtpPackets&quot;:143,&quot;rtxBitrate&quot;:0,&quot;rtxPackets&quot;:0,&quot;stunBitrate&quot;:8640,&quot;stunPackets&quot;:60,&quot;transportType&quot;:&quot;UDP&quot;},&quot;levels&quot;:{&quot;audioMaxGain&quot;:0,&quot;audioMaxVolume&quot;:0,&quot;audioMeanGain&quot;:0,&quot;audioMeanVolume&quot;:0,&quot;audioMinGain&quot;:0,&quot;audioMinVolume&quot;:0},&quot;mediaFoundationState&quot;:0,&quot;streams&quot;:[]}],&quot;intervalMetadata&quot;:{&quot;configuredBitrate&quot;:4000000,&quot;configuredPixelRateMainVideo&quot;:46080000,&quot;cpuInfo&quot;:{&quot;architecture&quot;:&quot;intel64&quot;,&quot;clockSpeedGigaHertz&quot;:2600,&quot;description&quot;:&quot;Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz&quot;,&quot;numberOfCores&quot;:6},&quot;darwinThermalState&quot;:1,&quot;defaultGpuInfo&quot;:{&quot;description&quot;:&quot;AMD Radeon Pro 5300M&quot;,&quot;memoryMegaBytes&quot;:4080},&quot;enableSystemBufferPool&quot;:false,&quot;maskedPeerReflexiveIP&quot;:&quot;106.222.198.208&quot;,&quot;mediaLabels&quot;:[&quot;UsingLADON_1&quot;,&quot;UsingLadonModelOnly_1&quot;,&quot;EnableRtpPaddingToProbe_1&quot;,&quot;AudioDynamicFecOn&quot;,&quot;EnableAppPackAsSTUN_1&quot;,&quot;EnableAgcOptimalParams_1&quot;,&quot;EnableSceneChangeDetection_1&quot;,&quot;EnableImprovePLCContinuity_1&quot;,&quot;EnableSuperResolution_1&quot;,&quot;EnableMacScreenCaptureKitImprovementP2Label_1&quot;,&quot;EnableUDPFallbackTCP_1&quot;,&quot;XcodecEncodeConditionsMet_0&quot;,&quot;XcodecRs&quot;,&quot;EnableResolutionBasedOnPhysicalPixel_3&quot;,&quot;scope-ucf-client-AaTestUserLevel&quot;,&quot;scope-ucf-client-EnableAudioUnderrunPLC&quot;,&quot;scope-ucf-client-Mobile-EnablePlaybackNewAgc-ga&quot;],&quot;meetingUserCount&quot;:29,&quot;memoryUsage&quot;:{&quot;cpuBitWidth&quot;:0,&quot;mainProcessMaximumMemoryBytes&quot;:339552,&quot;osBitWidth&quot;:0,&quot;processAverageMemoryUsage&quot;:3.55224609375,&quot;processMaximumMemoryBytes&quot;:582,&quot;processMaximumMemoryUsage&quot;:3.55224609375,&quot;systemAverageMemoryUsage&quot;:67,&quot;systemMaximumMemoryUsage&quot;:68},&quot;otherGpuInfo&quot;:[{&quot;description&quot;:&quot;Intel(R) UHD Graphics 630&quot;,&quot;memoryMegaBytes&quot;:1536}],&quot;peripherals&quot;:[{&quot;information&quot;:&quot;MacBook Pro Microphone&quot;,&quot;name&quot;:&quot;microphone&quot;},{&quot;information&quot;:&quot;MacBook Pro Speakers&quot;,&quot;name&quot;:&quot;speaker&quot;}],&quot;processAverageCPU&quot;:1.8214317009437067,&quot;processMaximumCPU&quot;:2.1168181957120127,&quot;screenResolution&quot;:31702,&quot;staticPerformanceLevel&quot;:5,&quot;systemAverageCPU&quot;:7,&quot;systemAverageGPU&quot;:2,&quot;systemMaximumCPU&quot;:10,&quot;systemMaximumGPU&quot;:4},&quot;intervalNumber&quot;:20,&quot;videoReceive&quot;:[],&quot;videoTransmit&quot;:[]}],&quot;name&quot;:&quot;client.mediaquality.event&quot;,&quot;sourceMetadata&quot;:{&quot;applicationSoftwareType&quot;:&quot;sparkmac&quot;,&quot;applicationSoftwareVersion&quot;:&quot;44.7.0.30141&quot;,&quot;intervalPeriod&quot;:&quot;60&quot;,&quot;mediaEngineSoftwareType&quot;:&quot;WME&quot;,&quot;mediaEngineSoftwareVersion&quot;:&quot;14.7.0.2367 [Top] &quot;,&quot;startTime&quot;:&quot;2024-07-20T05:49:10.393Z&quot;}},&quot;eventId&quot;:&quot;99a7e6e4-ea4e-44f6-8ac6-1c9787a4f641&quot;,&quot;origin&quot;:{&quot;buildType&quot;:&quot;prod&quot;,&quot;clientInfo&quot;:{&quot;browser&quot;:&quot;Chrome&quot;,&quot;browserLaunchMethod&quot;:&quot;url-handler&quot;,&quot;clientLaunchMethod&quot;:&quot;manual&quot;,&quot;clientMajorVersion&quot;:&quot;44.7&quot;,&quot;clientType&quot;:&quot;TEAMS_CLIENT&quot;,&quot;clientVersion&quot;:&quot;44.7.0.30141&quot;,&quot;localClientVersion&quot;:&quot;44.7.0.30141&quot;,&quot;localNetworkPrefix&quot;:&quot;192.168.1.0&quot;,&quot;majorVersion&quot;:44,&quot;minorVersion&quot;:7,&quot;modelNumber&quot;:&quot;MacBookPro16,1&quot;,&quot;os&quot;:&quot;mac&quot;,&quot;osVersion&quot;:&quot;14.3.1&quot;,&quot;revision&quot;:30141,&quot;subClientType&quot;:&quot;DESKTOP_APP&quot;,&quot;videoLayoutType&quot;:&quot;stackWithShare&quot;},&quot;emmVendorId&quot;:&quot;&quot;,&quot;environment&quot;:&quot;prod&quot;,&quot;mediaEngineSoftwareVersion&quot;:&quot;14.7.0.2367 [Top] &quot;,&quot;name&quot;:&quot;endpoint&quot;,&quot;networkType&quot;:&quot;wifi&quot;,&quot;upgradeChannel&quot;:&quot;&quot;,&quot;userAgent&quot;:&quot;sparkmac/44.7.0.30141&quot;,&quot;usingProxy&quot;:true},&quot;originTime&quot;:{&quot;sent&quot;:&quot;2024-07-20T06:10:10.885Z&quot;,&quot;triggered&quot;:&quot;2024-07-20T06:10:10.883Z&quot;},&quot;senderCountryCode&quot;:&quot;US&quot;},&quot;type&quot;:&quot;diagnostic-event&quot;}]}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Authorization" elementType="Header">
+                    <stringProp name="Header.name">Authorization</stringProp>
+                    <stringProp name="Header.value">Bearer eyJhbGciOiJSUzI1NiJ9.eyJjbHVzdGVyIjoiUDBBMSIsInByaXZhdGUiOiJleUpqZEhraU9pSktWMVFpTENKbGJtTWlPaUpCTVRJNFEwSkRMVWhUTWpVMklpd2lZV3huSWpvaVpHbHlJbjAuLjFXaDVSTWRpQUwzWXpfR2ZFYXBjZkEuRGRub01kcEN3WDU2Y0Z2eXlIQ3Z5MTdrVlM0NkRKSHJOR1JLRmczOUFkV1h4WWFJTDczRUo3TExQcjdINXdPTS5raEphcTN6V201NWFjNFFJNDlIQkVRIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJkaXNwbGF5TmFtZSI6IlZpbm90aCBLdW1hciBTIiwidG9rZW5fdHlwZSI6IkJlYXJlciIsImNsaWVudF9pZCI6IkNjYjI1ODFmMDcxYTA3MTRjOGFiN2Q0Nzc3ZjcwZWJlZDI2ZjFlZjVmMzI2MTU5N2YwMGFmYmIzYTUzYzFhZDg4IiwidXNlcl90eXBlIjoiZ3Vlc3QiLCJ0b2tlbl9pZCI6IkFhWjNyMFptWTNZemt4Wm1FdFlXUTFOeTAwTkRZd0xUazJPV0l0WVdFeU1USXhZekJoTURWalkyWTJPR1JpTXpndE5Ua3giLCJ1c2VyX2luZm8iOiJ7XCJtZXRhZGF0YVwiOntcImNyZWF0ZXRpbWVcIjoxNzIxNDU0NTM4MTUwLFwibWVldGluZ1Nlcmllc0lkXCI6XCJhMTViZjQ1YzJjNWU0OGYyOGJkNmQ2ZDE2M2M2MjUzMVwiLFwibWVldGluZ0luc3RhbmNlSWRcIjpcImExNWJmNDVjMmM1ZTQ4ZjI4YmQ2ZDZkMTYzYzYyNTMxX0lfNTk3ODExNDI1MTYwMTU5MDYwXCJ9LFwiZGlzcGxheU5hbWVcIjpcIlZpbm90aCBLdW1hciBTXCIsXCJlbWFpbFwiOlwiMjN2aW5vQGdtYWlsLmNvbVwifSIsInJlYWxtIjoiYjMxMmEzMTktMzRkMy00NmMyLTkwOWMtZGI3NTJiNmZhZjliIiwiZXhwaXJ5X3RpbWUiOjE3MjE1NDA5NDEwNjksImNpc191dWlkIjoiYzNhY2UyNmYtNDY1Yi0xMWVmLTg3MDYtOTliZjYxNmY3MjY1IiwiZW1haWwiOiIyM3Zpbm9AZ21haWwuY29tIn0.cEiFPQrtb0yhyljUj8VnW4521O0Gttu_fsZJAkxsb6O5sDhRV8vnntRGqBnvcDQqV8aJdb0uQQRPXgGle9CQ41I2-jGTGq_WljsS2ZcZ00wcEY8cBgGN2qydmBmwB43rQTgalYtB7ZiRo2TvYGmhka-J4-53mjgfLglsi_h79jb0AEfdwvTO3TBacTjUJoOMTG58txLIpRbXc-GK37DXF3xIzUX8k_zSq8aanL2J9is60wRMwXCDy4d2yiXfyuTnsAorUIey7RSWUFJOzZ-N9iZpKpUyiap1NV9x7-v1_OmbdXBCCc1MtzI6hGAUJK7RmlaMOxXwGn2jzE7WSDKnLw</stringProp>
+                  </elementProp>
+                  <elementProp name="Cisco-Device-URL" elementType="Header">
+                    <stringProp name="Header.name">Cisco-Device-URL</stringProp>
+                    <stringProp name="Header.value">${scheme}://wdm-r.wbx2.com/wdm/api/v1/devices/43491e6d-be91-4951-a9ce-80d42d5edf2a</stringProp>
+                  </elementProp>
+                  <elementProp name="Date" elementType="Header">
+                    <stringProp name="Header.name">Date</stringProp>
+                    <stringProp name="Header.value">2024-07-20T06:10:10.889Z</stringProp>
+                  </elementProp>
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">deflate, gzip</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">sparkmac/44.7.0.30141</stringProp>
+                  </elementProp>
+                  <elementProp name="TrackingID" elementType="Header">
+                    <stringProp name="Header.name">TrackingID</stringProp>
+                    <stringProp name="Header.value">CLIENT_116419c9-0ab8-45d5-af22-926837cbff8b</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="petstore_clickfish04-192">
+              <stringProp name="HTTPSampler.domain">petstore.octoperf.com</stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+              <stringProp name="HTTPSampler.path">/actions/Catalog.action</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="viewCategory" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">viewCategory</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                  <elementProp name="categoryId" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">categoryId</stringProp>
+                    <stringProp name="Argument.value">FISH</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                    <stringProp name="Header.value">navigate</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">${scheme}://petstore.octoperf.com/actions/Catalog.action</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Site" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                    <stringProp name="Header.value">same-origin</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-GB,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-User" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                    <stringProp name="Header.value">?1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot;Not/A)Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;126&quot;, &quot;Google Chrome&quot;;v=&quot;126&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                    <stringProp name="Header.value">?0</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-platform" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                    <stringProp name="Header.value">&quot;macOS&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                    <stringProp name="Header.value">1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate, br, zstd</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                    <stringProp name="Header.value">document</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="petstore_sign" enabled="true">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+          </TransactionController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="petstore_-193">
+              <stringProp name="HTTPSampler.domain">ch-freshworks.traps.paloaltonetworks.com</stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+              <stringProp name="HTTPSampler.path">/operations/reports/periodic?currentTimestamp=1721455818674</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;osType&quot;:2,&quot;currentAgentStatus&quot;:{&quot;osVersion&quot;:&quot;14.3.1&quot;,&quot;agentIp&quot;:&quot;192.168.1.7&quot;,&quot;deviceName&quot;:&quot;FWS-CHE-LT-6147&quot;,&quot;agentVersion&quot;:&quot;8.3.2.2676&quot;,&quot;contentVersion&quot;:&quot;1410-85084&quot;,&quot;policyTag&quot;:&quot;OWQ5MGQwYmNjMjEzNTkzN2RmMTRiZjIyOGY1MTFiNDVjNDI4MGRkY2Y3NDg1NGRhMjc4ZTM2MzZhYjgxNjJmMjpUcnVlOkVOQUJMRUQ6TElDRU5TRV8xMF9QUk8=&quot;,&quot;securityStatus&quot;:0,&quot;protectionStatus&quot;:0,&quot;dataCollectionStatus&quot;:1,&quot;isolationStatus&quot;:0,&quot;agentIpList&quot;:[&quot;192.168.1.7&quot;,&quot;2401:4900:1cd4:54bf:ccd:4598:cb30:a60e&quot;,&quot;2401:4900:1cd4:54bf:f439:ba33:283:ea7f&quot;],&quot;addresses&quot;:[{&quot;ip&quot;:[&quot;192.168.1.7&quot;,&quot;2401:4900:1cd4:54bf:ccd:4598:cb30:a60e&quot;,&quot;2401:4900:1cd4:54bf:f439:ba33:283:ea7f&quot;],&quot;mac&quot;:&quot;88:66:5a:27:ae:a1&quot;}],&quot;liveTerminalEnabled&quot;:true,&quot;scriptExecutionEnabled&quot;:true,&quot;fileRetrievalEnabled&quot;:true,&quot;agentLocation&quot;:0,&quot;fileSearchEnabled&quot;:false,&quot;manualProtectionPause&quot;:true,&quot;policyYamlVersion&quot;:&quot;&quot;,&quot;productType&quot;:0,&quot;vaContainerScanEnabled&quot;:false,&quot;userName&quot;:&quot;vsureshnambu&quot;,&quot;osType&quot;:2,&quot;agentAdminTokenHash&quot;:&quot;b3e0aad28ed8164cf97d7dcc64a13236a188a955a5459fa17335d24c0619e67e30bc7b86afa8a1b19e71aea94ad1963179044bf2aafb4a9881ab694fdf1655f1&quot;},&quot;numMessages&quot;:0,&quot;messages&quot;:[]}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="X-Auth" elementType="Header">
+                    <stringProp name="Header.name">X-Auth</stringProp>
+                    <stringProp name="Header.value">4ENNsZ5XUhsikP0rRlqySxfEPB2RpLFLPSsidMR3jjmju34OS4xqec9rY1HX/kkYK8igym3GeWe7yWNhVN7Zc0qPPSBRq/9PHM8OD/JpTHUhi02P/MZZyqgGsHbyWvcJ1+6JbkBrcQ2Tn6M157b6OjAsI8gzFjcCqCFi8t2FMBphXTlxOKpMUeBgjJtazmFFpFO0X7RDdcNBhAxJCaDXJTNCa5pZCfGZ6a1oV6uCIZxgfYFVfX8ng+rDkioKLZbcMgbjo980LQfnyOXT4otmuXBxMT5dfqX5dbPX0pQVbgwoGnq5hXt6ZMXFTmEVwTQp</stringProp>
+                  </elementProp>
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json</stringProp>
+                  </elementProp>
+                  <elementProp name="Cache-Control" elementType="Header">
+                    <stringProp name="Header.name">Cache-Control</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                  <elementProp name="Proxy-Authorization" elementType="Header">
+                    <stringProp name="Header.name">Proxy-Authorization</stringProp>
+                    <stringProp name="Header.value">Basic Og==</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="petstore_signout05">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+          </TransactionController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="petstore_signout05-194">
+              <stringProp name="TestPlan.comments">Detected the start of a redirect chain</stringProp>
+              <stringProp name="HTTPSampler.domain">petstore.octoperf.com</stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+              <stringProp name="HTTPSampler.path">/actions/Account.action</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="signoff" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.name">signoff</stringProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                    <stringProp name="Header.value">navigate</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">${scheme}://petstore.octoperf.com/actions/Catalog.action?viewCategory=&amp;categoryId=FISH</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Site" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                    <stringProp name="Header.value">same-origin</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-GB,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-User" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                    <stringProp name="Header.value">?1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot;Not/A)Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;126&quot;, &quot;Google Chrome&quot;;v=&quot;126&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                    <stringProp name="Header.value">?0</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-platform" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                    <stringProp name="Header.value">&quot;macOS&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                    <stringProp name="Header.value">1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate, br, zstd</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                    <stringProp name="Header.value">document</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="petstore_signout05-195">
+              <stringProp name="HTTPSampler.domain">petstore.octoperf.com</stringProp>
+              <stringProp name="HTTPSampler.port">443</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+              <stringProp name="HTTPSampler.path">/actions/Catalog.action</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                    <stringProp name="Header.value">navigate</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">${scheme}://petstore.octoperf.com/actions/Catalog.action?viewCategory=&amp;categoryId=FISH</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Site" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                    <stringProp name="Header.value">same-origin</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-GB,en;q=0.9</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-User" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                    <stringProp name="Header.value">?1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua</stringProp>
+                    <stringProp name="Header.value">&quot;Not/A)Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;126&quot;, &quot;Google Chrome&quot;;v=&quot;126&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                    <stringProp name="Header.value">?0</stringProp>
+                  </elementProp>
+                  <elementProp name="sec-ch-ua-platform" elementType="Header">
+                    <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                    <stringProp name="Header.value">&quot;macOS&quot;</stringProp>
+                  </elementProp>
+                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                    <stringProp name="Header.value">1</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate, br, zstd</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36</stringProp>
+                  </elementProp>
+                  <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                    <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                    <stringProp name="Header.value">document</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>false</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>false</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>true</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <hostname>true</hostname>
+            <threadCounts>true</threadCounts>
+            <sampleCount>true</sampleCount>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ProxyControl guiclass="ProxyControlGui" testclass="ProxyControl" testname="HTTP(S) Test Script Recorder">
+        <stringProp name="ProxyControlGui.port">8889</stringProp>
+        <collectionProp name="ProxyControlGui.exclude_list">
+          <stringProp name="1179605444">(?i).*\.(bmp|css|js|gif|ico|jpe?g|png|swf|eot|otf|ttf|mp4|woff|woff2)</stringProp>
+          <stringProp name="-88591710">www\.download\.windowsupdate\.com.*</stringProp>
+          <stringProp name="1323576868">toolbarqueries\.google\..*</stringProp>
+          <stringProp name="1629558731">clients.*\.google.*</stringProp>
+          <stringProp name="-1899150273">api\.bing\.com.*</stringProp>
+          <stringProp name="305776760">(?i).*\.(bmp|css|js|gif|ico|jpe?g|png|swf|eot|otf|ttf|mp4|woff|woff2)[\?;].*</stringProp>
+          <stringProp name="1779943373">us\.update\.toolbar\.yahoo\.com.*</stringProp>
+          <stringProp name="1815174768">safebrowsing.*\.google\.com.*</stringProp>
+          <stringProp name="587935979">g\.msn.*</stringProp>
+          <stringProp name="110431874">.*msg\.yahoo\.com.*</stringProp>
+          <stringProp name="1206954446">tiles.*\.mozilla\.com.*</stringProp>
+          <stringProp name="-1314416226">sqm\.microsoft\.com.*</stringProp>
+          <stringProp name="1726898318">geo\.yahoo\.com.*</stringProp>
+          <stringProp name="-192420923">.*yimg\.com.*</stringProp>
+          <stringProp name="2118375536">www\.google-analytics\.com.*</stringProp>
+          <stringProp name="1739087931">http?://self-repair\.mozilla\.org.*</stringProp>
+          <stringProp name="805311387">windowsupdate\.microsoft\.com.*</stringProp>
+          <stringProp name="-1424663473">.*detectportal\.firefox\.com.*</stringProp>
+          <stringProp name="11072252">.*toolbar\.yahoo\.com.*</stringProp>
+          <stringProp name="-190610036">.*\.google\.com.*/safebrowsing/.*</stringProp>
+          <stringProp name="-958112859">toolbar\.google\.com.*</stringProp>
+          <stringProp name="-1279148329">pgq\.yahoo\.com.*</stringProp>
+          <stringProp name="-1435252351">toolbar\.avg\.com/.*</stringProp>
+          <stringProp name="-576820688">toolbar\.msn\.com.*</stringProp>
+        </collectionProp>
+        <collectionProp name="ProxyControlGui.include_list"/>
+        <boolProp name="ProxyControlGui.capture_http_headers">true</boolProp>
+        <intProp name="ProxyControlGui.grouping_mode">4</intProp>
+        <boolProp name="ProxyControlGui.add_assertion">false</boolProp>
+        <stringProp name="ProxyControlGui.sampler_type_name"></stringProp>
+        <boolProp name="ProxyControlGui.sampler_redirect_automatically">false</boolProp>
+        <boolProp name="ProxyControlGui.sampler_follow_redirects">true</boolProp>
+        <boolProp name="ProxyControlGui.use_keepalive">true</boolProp>
+        <boolProp name="ProxyControlGui.sampler_download_images">false</boolProp>
+        <boolProp name="ProxyControlGui.regex_match">true</boolProp>
+        <stringProp name="ProxyControlGui.content_type_include"></stringProp>
+        <stringProp name="ProxyControlGui.content_type_exclude"></stringProp>
+        <boolProp name="ProxyControlGui.notify_child_sl_filtered">false</boolProp>
+        <stringProp name="ProxyControlGui.proxy_prefix_http_sampler_name">petstore_signout05</stringProp>
+        <intProp name="ProxyControlGui.proxy_http_sampler_naming_mode">1</intProp>
+        <stringProp name="ProxyControlGui.proxy_pause_http_sampler"></stringProp>
+        <boolProp name="ProxyControlGui.detect_graphql_request">true</boolProp>
+        <stringProp name="ProxyControlGui.default_encoding">UTF-8</stringProp>
+      </ProxyControl>
+      <hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>true</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>true</responseData>
+              <samplerData>true</samplerData>
+              <xml>true</xml>
+              <fieldNames>false</fieldNames>
+              <responseHeaders>true</responseHeaders>
+              <requestHeaders>true</requestHeaders>
+              <responseDataOnError>true</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <url>true</url>
+              <fileName>true</fileName>
+              <hostname>true</hostname>
+              <threadCounts>true</threadCounts>
+              <sampleCount>true</sampleCount>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">recording.xml</stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
